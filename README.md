@@ -1,6 +1,6 @@
-#RabbitMQ with SpringBoot
+# RabbitMQ with SpringBoot
 
-##RabbitMQ setup
+## RabbitMQ setup
 RabbitMQ setup run inside a docker container through a docker-compose file:
  ```
 services:
