@@ -33,7 +33,7 @@ The second can be found in rabbitmq.config classes.
 <br>
 The third is not exactly a configuration, the CreatePublisher.java class just send a message to an existing exchange in the RabbitMQ server.
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- In this cenario each consumer has to create his own queue and bind it to the exchange.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- In this scenario each consumer has to create his own queue and bind it to the exchange.
 
 
 
