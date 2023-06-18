@@ -5,8 +5,6 @@ import org.springframework.amqp.core.QueueBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.List;
-
 @Configuration
 public class QueueConfig {
 
@@ -23,14 +21,4 @@ public class QueueConfig {
                 .build();
     }
 
-//    @Bean
-//    public List<Queue> directQueues(){
-//        Queue depQ =  QueueBuilder
-//                .durable("departmentQueueWithBean")
-//                .build();
-//        Queue discQ =  QueueBuilder
-//                .durable("disciplineQueueWithBean")
-//                .build();
-//        return List.of(depQ, discQ);
-//    }
 }

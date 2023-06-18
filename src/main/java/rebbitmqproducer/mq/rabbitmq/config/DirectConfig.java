@@ -1,22 +1,15 @@
 package rebbitmqproducer.mq.rabbitmq.config;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.core.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.context.support.GenericWebApplicationContext;
-
-import javax.annotation.PostConstruct;
-import java.util.List;
 
 @Configuration
 
 public class DirectConfig {
 
-    //private final GenericWebApplicationContext context;
-//    private final List<Queue> filas;
     @Autowired
     @Qualifier("depQ")
     Queue depQ;
@@ -34,7 +27,7 @@ public class DirectConfig {
     }
 
     @Bean
-    public Binding binding(){
+    public Binding bindingDepQ(){
         return BindingBuilder
                 .bind(depQ)
                 .to(directExchange())
@@ -42,26 +35,11 @@ public class DirectConfig {
     }
 
     @Bean
-    public Binding binding2(){
+    public Binding bindingDisQ(){
         return BindingBuilder
                 .bind(disQ)
                 .to(directExchange())
                 .with("disciplineQueueWithBean");
     }
 
-//    @PostConstruct
-//    public void biding(){
-//        filas.forEach(
-//            queue -> {
-//                context.registerBean(
-//                        queue.getName(),
-//                        Binding.class,
-//                        () -> BindingBuilder
-//                                .bind(queue)
-//                                .to(directExchange())
-//                                .with(queue.getName())
-//                );
-//            }
-//        );
-//    }
 }
