@@ -25,11 +25,15 @@ You can now acess RabbitMQ Management on **localhost:15672**
 
 ## Producer
 
-The producer project contains two ways of RabbitMQ configuration.
+The producer project contains three ways of RabbitMQ configuration.
 <br>
 The first can be found in RabbitMQConnection.java class.
 <br>
 The second can be found in rabbitmq.config classes.
+<br>
+The third is not exactly a configuration, the CreatePublisher.java class just send a message to an existing exchange in the RabbitMQ server.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- In this cenario each consumer has to create his own queue and bind it to the exchange.
 
 
 
