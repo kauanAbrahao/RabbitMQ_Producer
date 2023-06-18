@@ -2,6 +2,7 @@ package rebbitmqproducer.mq.controller;
 
 import dto.DisciplineDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +18,8 @@ public class DisciplineController {
     DisciplineService service;
 
     @PutMapping
-    private ResponseEntity updateDiscipline(@RequestBody DisciplineDTO disciplineDTO){
-        return service.process(disciplineDTO);
+    private ResponseEntity<HttpStatus> updateDiscipline(@RequestBody DisciplineDTO disciplineDTO){
+        service.processWithBean(disciplineDTO);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

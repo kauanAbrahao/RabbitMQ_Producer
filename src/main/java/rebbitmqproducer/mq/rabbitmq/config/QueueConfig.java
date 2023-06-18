@@ -8,12 +8,17 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class QueueConfig {
 
-    @Bean
+    @Bean(value = "depQ")
     public Queue depQueue(){
         return QueueBuilder
                 .durable("departmentQueueWithBean")
                 .build();
     }
-
+    @Bean(value = "disQ")
+    public Queue dicQueue(){
+        return QueueBuilder
+                .durable("disciplineQueueWithBean")
+                .build();
+    }
 
 }
